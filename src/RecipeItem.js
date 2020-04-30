@@ -26,10 +26,20 @@ function RecipesItem({ match }) {
         let table = []
         recipe.meals.map(recipe => {
             for (let i = 0; i <= len; i++) {
-                let localArray = [<tr></tr>]
-                localArray.push(<td>{recipe['strMeasure' + i]}</td>)
-                localArray.push(<td>{recipe['strIngredient' + i]}</td>)
-                table.push(localArray)
+                if(recipe['strIngredient' + i] !== '' && recipe['strIngredient' + i] !== null &&  recipe['strIngredient' + i] !== undefined) {
+
+                    let localArray = []
+                    localArray.push(<div className='ingredients'> 
+                    <img src={`https://www.themealdb.com/images/ingredients/${recipe['strIngredient' + i]}-Small.png`} />
+                    <div>
+                    <p>{recipe['strMeasure' + i]}</p>
+                    <p>{recipe['strIngredient' + i]}</p></div>
+                    </div>)
+                    
+                    
+                    
+                    table.push(localArray)
+                }
 
             }
         })
@@ -48,21 +58,21 @@ function RecipesItem({ match }) {
                     : <div className='recipe'>
                         {recipe.meals.map(recipe => (
                             <div>
-                            <div className='flex'>
-                                <div className='image'>
-                                    <img src={recipe.strMealThumb} />
-                                </div>
-                                <div className='content'>
-                                    <h2>{recipe.strMeal}</h2>
-                                    <h3>Category : {recipe.strCategory}</h3>
-                                    <h4>{recipe.strArea}</h4>
-                                    <table>
-                                        {table(20)}
-                                    </table>
+                                <div className='flex'>
+                                    <div className='image'>
+                                        <img src={recipe.strMealThumb} />
+                                    </div>
+                                    <div className='content'>
+                                        <h2>{recipe.strMeal}</h2>
+                                        <h3>Category : {recipe.strCategory}</h3>
+                                        <h4>{recipe.strArea}</h4>
+                                        <table>
+                                            {table(20)}
+                                        </table>
 
+                                    </div>
                                 </div>
-                            </div>
-                            <p className='instructions'>{recipe.strInstructions}</p>
+                                <p className='instructions'>{recipe.strInstructions}</p>
 
                             </div>
                         ))}

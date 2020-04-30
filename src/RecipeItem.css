@@ -92,6 +92,41 @@ box-shadow: 0px 5px 5px black;
 
 }
 
+table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    flex-wrap: wrap;
+    
+}
+
+.ingredients{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+  
+   
+}
+
+.ingredients img{
+    padding-top:0 ;
+    width: 50px;
+}
+.ingredients > div p{
+   display: inline-block;
+   margin: 2px;
+   font-style: italic;
+   
+
+}
+
+
+
+
 
 form input[type='text']{
     width: 400px;
@@ -122,8 +157,11 @@ form input[type='submit']:hover{
 @media (max-width:1072px){
     .recipe  div .flex img{
         padding-top: 20px;
-      
-        
+    
+    }
+
+    .ingredients > img{
+        padding: 0 !important;
     }
 
     form input[type='text']{
