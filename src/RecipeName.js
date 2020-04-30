@@ -31,14 +31,39 @@ function RecipeName() {
         
     }
 
+    // const table = (len) => {
+    //     let table = []
+    //     recipe.meals.map(recipe => {
+    //         for (let i = 0; i <= len; i++) {
+    //             let localArray = [<tr></tr>]
+    //             localArray.push(<td>{recipe['strMeasure' + i]}</td>)
+    //             localArray.push(<td>{recipe['strIngredient' + i]}</td>)
+    //             table.push(localArray)
+
+    //         }
+    //     })
+    //     return table
+    // }
+
+
     const table = (len) => {
         let table = []
         recipe.meals.map(recipe => {
             for (let i = 0; i <= len; i++) {
-                let localArray = [<tr></tr>]
-                localArray.push(<td>{recipe['strMeasure' + i]}</td>)
-                localArray.push(<td>{recipe['strIngredient' + i]}</td>)
-                table.push(localArray)
+                if(recipe['strIngredient' + i] !== '' && recipe['strIngredient' + i] !== null &&  recipe['strIngredient' + i] !== undefined) {
+
+                    let localArray = []
+                    localArray.push(<div className='ingredients'> 
+                    <img src={`https://www.themealdb.com/images/ingredients/${recipe['strIngredient' + i]}-Small.png`} />
+                    <div>
+                    <p>{recipe['strMeasure' + i]}</p>
+                    <p>{recipe['strIngredient' + i]}</p></div>
+                    </div>)
+                    
+                    
+                    
+                    table.push(localArray)
+                }
 
             }
         })
