@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Hier RecipeItem +  RecipeName  */
+.recipeItem{
+    background-image: url(./8Fg9vW.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    min-height: 100vh;
+
+}
+
+
+
+
+.recipe   > div{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    flex-wrap: wrap;
+    padding: 50px 0;
+    
+   
+    
+}
+
+.not{
+    color: white;
+    font-size: 2rem;
+}
+
+
+.recipe  .flex{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 500px;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid #fcdb5a;
+    box-shadow: 0px 5px 5px black;
+    background-color: rgba(255, 255, 255, 0.678);
+  
+    
+
+}
+
+
+.recipe   .flex img{
+    max-width: 453px;
+    object-fit: cover;
+  
+    
+}
+
+.recipe div .flex .content{
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.recipe div .flex .content h2{
+    color: black;
+    
+}
+
+.recipe div .instructions{
+padding: 20px;
+background-color: rgba(255, 255, 255, 0.678);
+margin-top: 10px;
+border-radius: 10px;
+border: 2px solid #fcdb5a;
+box-shadow: 0px 5px 5px black;
+
+
+
+
+}
+
+
+form input[type='text']{
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    height: 35px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 10px 0 0 10px ;
+    padding-left: 10px;
+    font-size: .9rem;
+}
+
+form input[type='submit'] {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    background-color: black;
+    border-radius: 0 10px 10px 0;
+    transition:  all .5s;
+    cursor: pointer;
+}
+form input[type='submit']:hover{
+    background-color: white;
+    color: black;
+}
+
+
+@media (max-width:1072px){
+    .recipe  div .flex img{
+        padding-top: 20px;
+      
+        
+    }
+
+    form input[type='text']{
+        width:200px;
+    }
+}
