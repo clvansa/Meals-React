@@ -60,7 +60,7 @@ function RecipesItem({ match }) {
                             <div>
                                 <div className='flex'>
                                     <div className='image'>
-                                        <img src={recipe.strMealThumb} />
+                                        <img className='imageMeal' src={recipe.strMealThumb} />
                                     </div>
                                     <div className='content'>
                                         <h2>{recipe.strMeal}</h2>
