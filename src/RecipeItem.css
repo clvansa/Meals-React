@@ -64,7 +64,7 @@
     
 }
 
-.recipe  .flex .image  img{
+.recipe  .flex .image  .imageMeal{
     width: 100%;
     border-radius: 10px;
 }
@@ -103,6 +103,7 @@ table{
     align-items: center;
     max-width: 500px;
     flex-wrap: wrap;
+    padding: 15px 0;
     
 }
 
@@ -113,6 +114,8 @@ table{
     padding: 5px;
     justify-content: center;
     align-items: center;
+    
+    transition: all .5s;
   
    
 }
@@ -121,6 +124,12 @@ table{
     padding-top:0 ;
     width: 70px;
 }
+
+.ingredients:hover {
+    transform: scale(1.5);
+}
+
+
 .ingredients > div p{
    display: inline-block;
    margin: 2px;
