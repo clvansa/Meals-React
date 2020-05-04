@@ -8,7 +8,7 @@ function App() {
  
   return (
         <nav > 
-            <h1>Logo</h1>
+            <h1 className='logo'>Logo</h1>
           
             <ul>
             <Link to='/'>

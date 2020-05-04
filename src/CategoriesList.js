@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Ruoter, Route, Switch, Link } from 'react-router-dom';
-import Search from './Search'
+import Search from './Search';
+import Title from 'react-vanilla-tilt'
 import './Recipes.css';
 
 
@@ -22,18 +23,16 @@ function CategoriesList({match}) {
 
     }
 
-
     return (
+
         <div className='categoriesList'>
-           
             <div>
-                
                 {recipes.meals == undefined
                     ? <p>Nooo</p>
                     : <div className='categoriesList-recipes'>
                         {recipes.meals.map(recipe => (
-                            <div className='categoriesList-flex'>
-                                <div>
+                            <Title className='categoriesList-flex'>
+                                <div className='categoriesList-image'>
                                 <img src={recipe.strMealThumb} /></div>
                                 <div className='categoriesList-content'>
                                     <h2>{recipe.strMeal}</h2>
@@ -41,7 +40,7 @@ function CategoriesList({match}) {
                                         <p>MORE ABOUT</p>
                                     </Link>
                                 </div>
-                            </div>
+                            </Title>
                         ))}
                     </div>
                 }
@@ -49,6 +48,7 @@ function CategoriesList({match}) {
         </div>
     )
 }
+
 
 export default CategoriesList;
 

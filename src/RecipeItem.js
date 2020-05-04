@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Ruoter, Route, Switch, Link } from 'react-router-dom';
-import Search from './Search'
+import Search from './Search';
 import './RecipeItem.css';
 
 
@@ -11,14 +11,14 @@ function RecipesItem({ match }) {
 
     useEffect(() => {
         fetchRecipe();
-        console.log(recipe)
+        
     }, [])
 
     const fetchRecipe = async () => {
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${match.params.id}`);
         const data = await response.json();
         setRecipe(data)
-
+        console.log(data)
 
     }
 
@@ -69,7 +69,6 @@ function RecipesItem({ match }) {
                                         <table>
                                             {table(20)}
                                         </table>
-
                                     </div>
                                 </div>
                                 <p className='instructions'>{recipe.strInstructions}</p>

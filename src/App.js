@@ -35,8 +35,9 @@ function App() {
 }
 
 
-const Home = () => {
 
+const Home = () => {
+ 
   return (
     <div>
       <div className='home'>
